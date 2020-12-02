@@ -1,3 +1,4 @@
+import 'package:first_app/next_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,25 +57,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
       ),
       body: Center(
-
-        child: Container(
-          height: double.infinity,
-          color: Colors.yellow,
-          child: Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Row(
-
-              children: <Widget>[
-                Text(
-                  'ボタンを押すと数字が1ずつ増えていくよ！',
-                ),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ],
-            ),
-          ),
+        child: RaisedButton(
+          child: Text("次へ"),
+          color: Colors.orange,
+          onPressed: (){
+            //ここに押したら反応するコードを書く
+            //画面遷移のコードを記入
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NextPage(),
+              ),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
