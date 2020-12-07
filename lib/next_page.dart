@@ -32,7 +32,7 @@ class NextPage extends StatelessWidget {
                 onPressed: (){
                   //ここに押したら反応するコードを書く
                   //画面遷移のコードを記入
-                  Navigator.pop(context);
+                  Navigator.pop(context, "ノダアツ");
                 },
               ),
             ),

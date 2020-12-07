@@ -42,6 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  String text = "次へ";
+
   @override
   Widget build(BuildContext context) {
 
@@ -58,16 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: RaisedButton(
-          child: Text("次へ"),
+          child: Text(text),
           color: Colors.orange,
-          onPressed: (){
+          onPressed: () async {
             //ここに押したら反応するコードを書く
             //画面遷移のコードを記入
-            Navigator.push(
+            final result = await Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => NextPage("ノダアツ"),
               ),
             );
+            text = result;
+            print(result);
           },
         ),
       ),
