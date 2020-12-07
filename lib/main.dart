@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //画面遷移のコードを記入
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NextPage(),
+              MaterialPageRoute(builder: (context) => NextPage("ノダアツ"),
               ),
             );
           },
