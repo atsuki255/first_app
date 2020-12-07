@@ -59,20 +59,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text(text),
-          color: Colors.orange,
-          onPressed: () async {
-            //ここに押したら反応するコードを書く
-            //画面遷移のコードを記入
-            final result = await Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage("ノダアツ"),
-              ),
-            );
-            text = result;
-            print(result);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network
+          ('https://pbs.twimg.com/profile_images/1254056963861671938/yX80o4T__400x400.jpg',
+            ),
+            RaisedButton(
+              child: Text(text),
+              color: Colors.orange,
+              onPressed: () async {
+                //ここに押したら反応するコードを書く
+                //画面遷移のコードを記入
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage("ノダアツ"),
+                  ),
+                );
+                text = result;
+                print(result);
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
