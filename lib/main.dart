@@ -62,8 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset
-          ('images/IMG_1407.jpeg',
+            Icon(
+              Icons.share,
+              size:40
             ),
             RaisedButton(
               child: Text(text),
