@@ -42,8 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  String text = "次へ";
-
   @override
   Widget build(BuildContext context) {
 
@@ -58,32 +56,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
 
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.share,
-              size:40
-            ),
-            RaisedButton(
-              child: Text(text),
-              color: Colors.orange,
-              onPressed: () async {
-                //ここに押したら反応するコードを書く
-                //画面遷移のコードを記入
-                final result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NextPage("ノダアツ"),
-                  ),
-                );
-                text = result;
-                print(result);
-              },
-            ),
-          ],
+      body: Container(
+        width: double.infinity,
+        child: TextFormField(
+          autofocus: true,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: '文字を入れてね！',
+          ),
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
@@ -92,3 +75,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
