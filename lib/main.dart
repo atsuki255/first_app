@@ -42,6 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final  myFocusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
 
@@ -58,12 +60,25 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: TextFormField(
-          autofocus: true,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: '文字を入れてね！',
-          ),
+        child: Column(
+          children: [
+            TextFormField(
+              autofocus: true,
+              decoration: InputDecoration(
+                hintText: '文字を入れてね！',
+              ),
+            ),
+            TextField(
+              focusNode: myFocusNode,
+            ),
+            RaisedButton(
+              child: Text("フォーカス！"),
+              onPressed: (){
+                // TODO:ここにフォーカスするためにコード
+                myFocusNode.requestFocus();
+              },
+            ),
+          ],
         ),
       ),
 
