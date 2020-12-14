@@ -33,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final items = ["ノダアツ1", "ノダアツ2", "ノダアツ3", ];
 
 
   @override
@@ -51,74 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.info),
-              title: Text('Information'),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NextPage("ノダアツ")),
-                );
-                //TODO: 画面遷移
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ), ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ), ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ), ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ),
-          ],
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('${items[index]}'),
+            );
+          },
         ),
       ),
     );
